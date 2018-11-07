@@ -1,9 +1,11 @@
 /**
+ * P5js Based Responsive StarField 
  * © 2018 Chiraag Bangera.
  */
 
 let Width;
 let Height;
+let fontSize = 25;
 
 let canvas;
 
@@ -17,7 +19,7 @@ function setup() {
     windowResized();
     textAlign(CENTER, CENTER);
     rectMode(CENTER);
-    textSize(60);
+    textSize(fontSize);
     frameRate(60);
     for (let i = 0; i < 1000; i++) {
         stars.push(new Star(Width, Height));
@@ -38,6 +40,9 @@ function windowResized() {
 
 function draw() {
     background(0);
+    noStroke();
+    fill(125);
+    text("Press UP arrow to Warp!!",Width/2,Height - fontSize);
     translate(Width / 2, Height / 2);
     stars.forEach(star => {
         star.update(speed);
