@@ -47,7 +47,7 @@ function draw() {
 
 function keyPressed() {
     if (keyCode === UP_ARROW) {
-        speed = 5;
+        speed = 10;
     }
 }
 
@@ -88,7 +88,6 @@ class Star {
 
     draw() {
         fill(this.color);
-        stroke(this.color);
         strokeWeight(0);
         let sx = map(this.x / this.z, 0, 1, 0, this.starfield.w / 2);
         let sy = map(this.y / this.z, 0, 1, 0, this.starfield.h / 2);
@@ -96,6 +95,7 @@ class Star {
         let px = map(this.x / this.pz, 0, 1, 0, this.starfield.w / 2);
         let py = map(this.y / this.pz, 0, 1, 0, this.starfield.h / 2);
         this.pz = this.z;
+        strokeWeight(2);
         stroke(this.color);
         line(px, py, sx, sy);
 
